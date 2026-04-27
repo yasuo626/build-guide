@@ -1,7 +1,16 @@
 
 # vllm build
 
+
 - [offical vllm build guide](https://docs.vllm.ai/en/latest/getting_started/installation/gpu/index.html)
+
+## env
+
+- 32G,ubuntu22.04
+- gcc11,cuda12.8
+- conda env: python3.11,torch
+- vllm src: 0.19.2rc1.dev212+g8cd174fa3.d20260427 - build on 26.4.26(commit id 8cd174fa358326d5cc4195446be2ebcd65c481ce)
+
 
 ## build details
 

@@ -39,7 +39,7 @@ python --version
 nvcc -V 
 
 python -m pip install --upgrade pip
-python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 
+python -m pip install torch==2.11+cu128 torchvision==2.11+cu128 torchaudio==0.26.0+cu128 --index-url https://download.pytorch.org/whl/cu128 
 python -m pip install setuptools_scm
 python -c "import torch; print(torch.__version__)"
 
