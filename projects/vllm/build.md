@@ -6,8 +6,7 @@
 
 ## env
 
-- 32G,ubuntu22.04
-- gcc11,cuda12.8
+- gcc11.4.0,cuda12.8
 - conda env: python3.11,torch
 - vllm src: 0.19.2rc1.dev212+g8cd174fa3.d20260427 - build on 26.4.26(commit id 8cd174fa358326d5cc4195446be2ebcd65c481ce)
 
@@ -43,8 +42,7 @@ export https_proxy=http://127.0.0.1:10808
 export HTTP_PROXY=http://127.0.0.1:10808
 export HTTPS_PROXY=http://127.0.0.1:10808
 
-cd ~/projects/vllm
-nohup bash ~/autoenv/projects/vllm.sh > build.log 2>&1 &
+nohup bash ./build.sh > build.log 2>&1 &
 ```
 
 ## some problem record
