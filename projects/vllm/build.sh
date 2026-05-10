@@ -10,15 +10,15 @@ mkdir -p "$DEPLOY_PATH"
 cd $DEPLOY_PATH
 
 if [ ! -d "vllm" ]; then
-	git clone https://github.com/vllm-project/vllm.git
+    git clone https://github.com/vllm-project/vllm.git
 fi
 
 # conda init
 source /opt/Anaconda3/etc/profile.d/conda.sh
 
 if ! conda env list | grep -q "^$CONDA_ENV_NAME "; then
-	echo Creating new conda environment $CONDA_ENV_NAME...
-	conda create -n $CONDA_ENV_NAME python=$PYTHON_VERSION -y
+    echo Creating new conda environment $CONDA_ENV_NAME...
+    conda create -n $CONDA_ENV_NAME python=$PYTHON_VERSION -y
 fi
 
 conda activate $CONDA_ENV_NAME
@@ -37,7 +37,8 @@ python --version
 nvcc -V
 
 python -m pip install --upgrade pip
-python -m pip install torch==2.11+cu128 torchvision==2.11+cu128 torchaudio==0.26.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+# --force-reinstall --no-cache-dir
+python -m pip install torch==2.11+cu128 torchvision==0.26.0+cu128 torchaudio==2.11+cu128 --index-url https://download.pytorch.org/whl/cu128 --extra-index-url https://pypi.tuna.tsinghua.edu.cn/simple
 python -m pip install setuptools_scm
 python -c "import torch; print(torch.__version__)"
 
